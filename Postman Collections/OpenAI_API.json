@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "e3152cdb-7961-47f7-8be5-1b0a31a17ed9",
+		"name": "OpemAI TestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chat completion",
+			"id": "6b38ba7c-2ca1-4bb1-84a0-e64eec7def20",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"You are a helpful assistant.\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.openai.com/v1/chat/completions"
+			},
+			"response": []
+		},
+		{
+			"name": "model",
+			"id": "1c73e6d4-ef40-4a16-9af1-d72158a8a43d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://api.openai.com/v1/models"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "8d156514-f70e-4d3a-8ea2-ccffbb2ca6e0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://api.openai.com/v1/vector_stores"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{apiKey}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cc1c9081-c156-477b-a6de-fc6c013ed852",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "50185f63-40e3-4e1c-b436-6e573b71b0c8",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiKey",
+			"value": ""
+		}
+	]
+}
