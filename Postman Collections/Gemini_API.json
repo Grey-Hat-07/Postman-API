@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "247dfec5-efdd-4753-88c4-af6c9485e1d5",
+		"name": "Gemini API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestAPI",
+			"id": "05186097-b0a6-40c1-a481-f4b7af8d0d71",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n      {\n        \"parts\": [\n          {\n            \"text\": \"Explain how AI works in a few words\"\n          }\n        ]\n      }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash:generateContent"
+			},
+			"response": []
+		},
+		{
+			"name": "Roles",
+			"id": "7160bc05-59e3-4950-8096-8b3fea01ad26",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"model\",\n            \"parts\": [\n                {\n                    \"text\": \"Translate english to bangla\"\n                }\n            ]\n        },\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"let's football\"\n                }\n            ]\n        }\n    ],\n    \"generationConfig\": {\n        \"temperature\": 0.7\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash-lite:generateContent"
+			},
+			"response": []
+		},
+		{
+			"name": "Streamgenerated",
+			"id": "bc1659cb-3dca-4096-bb42-ec32aa398020",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"Write a short poem about the game of football\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash:streamGenerateContent"
+			},
+			"response": []
+		},
+		{
+			"name": "MultiUser",
+			"id": "bf0efeaa-44de-40bf-9e95-9e8730945d82",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"Give me a funny name for a pet dinosaur\"\n                }\n            ]\n        }\n    ],\n    \"generationConfig\": {\n        \"candidateCount\": 2,\n        \"temperature\": 0.9,\n        \"maxOutputTokens\": 30\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash-lite:generateContent"
+			},
+			"response": []
+		},
+		{
+			"name": "SysInstruct",
+			"id": "3b6ce571-504e-449d-ab2f-8de888399515",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"Difference between football and rugby\"\n                }\n            ]\n        }\n    ],\n    \"generationConfig\": {\n        \"temperature\": 0.7\n    },\n    \"systemInstruction\": {\n        \"parts\": [\n            {\n                \"text\": \"You are a pirate. Always talk like one.\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash-lite:generateContent"
+			},
+			"response": []
+		},
+		{
+			"name": "Multimodal inputs (text + image)",
+			"id": "fe9896f9-0b15-4d31-affb-3403eaecd092",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"What do you see in this image?\"\n                },\n                {\n                    \"file_data\": {\n                        \"mime_type\": \"image/jpeg\",\n                        \"file_uri\": \"https://raw.githubusercontent.com/Grey-Hat-07/ImageTestAPI/main/Flowers.jpeg\"\n                    }\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash:generateContent"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
