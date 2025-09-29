@@ -68,7 +68,7 @@
 			"response": []
 		},
 		{
-			"name": "ask an image",
+			"name": "Sessions",
 			"id": "cb7ecf56-bc7b-4fd8-ac85-9e170f8bae22",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
