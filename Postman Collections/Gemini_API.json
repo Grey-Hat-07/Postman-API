@@ -68,6 +68,37 @@
 			"response": []
 		},
 		{
+			"name": "ask an image",
+			"id": "cb7ecf56-bc7b-4fd8-ac85-9e170f8bae22",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-goog-api-key",
+						"value": "AIzaSyDZBiD2jFXuMYXmelnmVQMBtJ7ocHjkglc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": [\n        {\n            \"role\": \"model\",\n            \"parts\": [\n                {\n                    \"text\": \"Translate english to bangla\"\n                }\n            ]\n        },\n        {\n            \"role\": \"user\",\n            \"parts\": [\n                {\n                    \"text\": \"let's football\"\n                }\n            ]\n        }\n    ],\n    \"generationConfig\": {\n        \"temperature\": 0.7\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/v1beta/models/gemini-2.5-flash-lite:generateContent"
+			},
+			"response": []
+		},
+		{
 			"name": "Streamgenerated",
 			"id": "bc1659cb-3dca-4096-bb42-ec32aa398020",
 			"protocolProfileBehavior": {
